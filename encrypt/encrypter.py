@@ -1,4 +1,3 @@
-from table_help import shuffle_binstr
 from viewer import binstr2hexstr
 from encrypt.tables import IPtable
 from format_utils import str2binstr, align_str_zero, shuffle_binstr, xor_binstr
