@@ -1,5 +1,5 @@
 from viewer import binstr2hexstr
-from encrypt.tables import IPtable
+from encrypt.tables import IPtable, table8
 from format_utils import str2binstr, align_str_zero, shuffle_binstr, xor_binstr
 from encrypt.feistel import func as feistel_func
 import encrypt.key as key
@@ -19,11 +19,16 @@ def encrypt_block(bin_str, rounds_keys):
 		L, R = R, new_R
 		print(f"L{round_idx}: {binstr2hexstr(L, 8)}| R{round_idx}: {binstr2hexstr(R, 8)}")
 		print("\n\n")
+	print("\n\n\n")
+	chifer_text = R + L
+	chifer_text = shuffle_binstr(chifer_text, table8)
+	print("chifer text:")
+	print(binstr2hexstr(chifer_text, 8))
 	
 
 
 def encrypt(text, key_text):
-	pre_key = key.gen_pre_key("COMPUTER")
+	pre_key = key.gen_pre_key(key_text)
 	rounds_keys = key.rounds_keys_by_prekey(pre_key)
 	binstr = str2binstr(text)
 	binstr = align_str_zero(binstr, 64, "left")
