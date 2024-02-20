@@ -28,7 +28,7 @@ def encrypt_block(bin_str, rounds_keys):
 	
 
 
-def encrypt(text, key_text):
+def decrypt(text, key_text):
 	blocks = []
 	pre_key = key.gen_pre_key(key_text)
 	rounds_keys = key.rounds_keys_by_prekey(pre_key)
