@@ -1,8 +1,8 @@
 from viewer import binstr2hexstr
-from encrypt.tables import IPtable, table8
+from des.tables import IPtable, table8
 from format_utils import str2binstr, align_str_zero, shuffle_binstr, xor_binstr
-from encrypt.feistel import func as feistel_func
-import encrypt.key as key
+from des.feistel import func as feistel_func
+import des.key as key
 
 def encrypt_block(bin_str, rounds_keys):
 	start_block = shuffle_binstr(bin_str, IPtable)

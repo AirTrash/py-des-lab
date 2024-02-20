@@ -1,5 +1,5 @@
 from format_utils import str2unicode, str2bin, align_str_zero, shuffle_binstr
-from encrypt.tables import table5, table6, table7
+from des.tables import table5, table6, table7
 from viewer import binstr2hexstr
 
 
