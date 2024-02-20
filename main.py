@@ -5,6 +5,6 @@ from viewer import binstr2hexstr
 
 if __name__ == "__main__":
 	blocks = encrypt("Sys12COM", "CRYPTA12")
-	print(binstr2hexstr(blocks[0], 8))
-	decrypt(blocks[0], "CRYPTA12")
+	#print(binstr2hexstr(blocks[0], 8))
+	#decrypt(blocks[0], "CRYPTA12")
 

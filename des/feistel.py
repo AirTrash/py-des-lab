@@ -11,20 +11,17 @@ def s_transformation(b_block, table):
 
 def func(R, round_key):
 	extended_R = shuffle_binstr(R, table2)
-	print("extended_R:")
-	print(binstr2hexstr(extended_R, 8))
+	print("extended_R:", binstr2hexstr(extended_R, 8))
 	r_xor_k = xor_binstr(extended_R, round_key)
-	print("extended_R xor round_key:")
-	print(binstr2hexstr(r_xor_k, 8))
+	print("extended_R xor round_key:", binstr2hexstr(r_xor_k, 8))
 	b_blocks = split_str(r_xor_k, 6)
-	print("B_blocks:")
-	print(b_blocks)
+	print("B_blocks:", b_blocks)
 	ret = ""
 	for i, block in enumerate(b_blocks):
 		s_out = s_transformation(block, table3[i])
 		ret += s_out
-	print("after s transformation:")
-	print(binstr2hexstr(ret, 4))
+	print("after s transformation:", binstr2hexstr(ret, 4))
 	ret = shuffle_binstr(ret, table4)
+	print("feistel func:", binstr2hexstr(ret, 8))
 	return ret
 
