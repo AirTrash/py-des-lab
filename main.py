@@ -1,4 +1,4 @@
-from des.encrypter import encrypt
+from des.encryptor import encrypt
 from format_utils import align_str_zero
 from viewer import binstr2hexstr
 

@@ -12,6 +12,7 @@ def gen_pre_key(string):
 	pre_key = shuffle_binstr(pre_key, table5)
 	return pre_key
 
+
 def left_bais(string, count):
 	return string[count::] + string[:count]
 
