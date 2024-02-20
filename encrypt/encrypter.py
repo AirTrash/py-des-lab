@@ -22,7 +22,7 @@ def encrypt_block(bin_str, rounds_keys):
 	print("\n\n\n")
 	chifer_text = R + L
 	chifer_text = shuffle_binstr(chifer_text, table8)
-	print("chifer text:")
+	print("chifer block:")
 	print(binstr2hexstr(chifer_text, 8))
 	
 
