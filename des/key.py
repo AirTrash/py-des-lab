@@ -26,6 +26,6 @@ def rounds_keys_by_prekey(pre_key: str) -> str:
 		pre_key = c + d
 		keys.append(shuffle_binstr(pre_key, table7))
 	print("rounds keys:")
-	for binstr in keys:
-		print(binstr2hexstr(binstr, 8))
+	for i, binstr in enumerate(keys):
+		print(i + 1, "|", binstr2hexstr(binstr, 8))
 	return keys

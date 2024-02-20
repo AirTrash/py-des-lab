@@ -9,7 +9,7 @@ def encrypt_block(bin_str, rounds_keys):
 	L, R = start_block[:32], start_block[32::]
 	print("\n\n")
 	print(f"L0: {binstr2hexstr(L, 8)}| R0: {binstr2hexstr(R, 8)}")
-	print("\n\n")
+	print("\n")
 	for i in range(16):
 		round_idx = i + 1
 		print("round", round_idx)
@@ -30,11 +30,11 @@ def encrypt_block(bin_str, rounds_keys):
 
 def encrypt(text, key_text):
 	blocks = []
-	pre_key = key.gen_pre_key(key_text)
-	rounds_keys = key.rounds_keys_by_prekey(pre_key)
 	binstr = str2binstr(text)
 	binstr = align_str_zero(binstr, 64, "left")
-	print(binstr2hexstr(binstr, 8))
+	print("input block:", binstr2hexstr(binstr, 8), "\n\n")
+	pre_key = key.gen_pre_key(key_text)
+	rounds_keys = key.rounds_keys_by_prekey(pre_key)
 	chifer_block = encrypt_block(binstr, rounds_keys)
 	blocks.append(chifer_block)
 	return blocks
