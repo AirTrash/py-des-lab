@@ -21,9 +21,9 @@ def encrypt_block(bin_str, rounds_keys):
 		print("\n\n")
 	print("\n\n\n")
 	chifer_block = R + L
-	chifer_block = shuffle_binstr(chifer_text, table8)
+	chifer_block = shuffle_binstr(chifer_block, table8)
 	print("chifer block:")
-	print(binstr2hexstr(chifer_text, 8))
+	print(binstr2hexstr(chifer_block, 8))
 	return chifer_block
 	
 
@@ -34,6 +34,7 @@ def encrypt(text, key_text):
 	rounds_keys = key.rounds_keys_by_prekey(pre_key)
 	binstr = str2binstr(text)
 	binstr = align_str_zero(binstr, 64, "left")
+	print(binstr2hexstr(binstr, 8))
 	chifer_block = encrypt_block(binstr, rounds_keys)
 	blocks.append(chifer_block)
 	return blocks
